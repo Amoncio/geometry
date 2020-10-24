@@ -7,8 +7,15 @@ side_b = gets.to_f
 print "Please enter side C: "
 side_c = gets.to_f
 
-s = (side_a + side_b + side_c) / 2
-area = Math.sqrt(s * (s - side_a) * (s - side_b) * (s - side_c))
 
-puts format("The area of the triangle is %.2f.", area)
+s = (side_a + side_b + side_c) / 2
+heron = s * (s - side_a) * (s - side_b) * (s - side_c)
+if heron <= 0
+  puts "That ain't a triangle, buddy."
+else
+  area = Math.sqrt(heron)
+  puts format("The area of the triangle is %.2f.", area)
+end
+
+
 
