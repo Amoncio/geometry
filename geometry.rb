@@ -10,11 +10,11 @@ side_c = gets.to_f
 
 s = (side_a + side_b + side_c) / 2
 heron = s * (s - side_a) * (s - side_b) * (s - side_c)
-if heron <= 0
-  puts "That ain't a triangle, buddy."
-else
+if heron.positive?
   area = Math.sqrt(heron)
   puts format("The area of the triangle is %.2f.", area)
+else
+  puts "That ain't a triangle, buddy."
 end
 
 
