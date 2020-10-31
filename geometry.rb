@@ -16,7 +16,11 @@ begin
   raise Math::DomainError unless heron.positive?
 
   area = Math.sqrt(heron)
+  perimeter = side_a + side_b + side_c
+
+
   puts format("The area of the triangle is %.2f.", area)
+  puts format("The perimeter of the triangle is %.2f.", perimeter)
 rescue Math::DomainError
   puts "That ain't a triangle, buddy."
 end
