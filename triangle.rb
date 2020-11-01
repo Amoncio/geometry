@@ -1,15 +1,20 @@
+class TriangleError < StandardError
+end
+
 class Triangle
   attr_reader :sides
 
+  ERR_MSG = "That ain't a triangle, buddy.".freeze
+
   def initialize(sides)
     @sides = sides.map(&:to_f)
-    raise ArgumentError unless side_a.positive? && side_b.positive? && side_c.positive?
+    raise(TriangleError, ERR_MSG) unless side_a.positive? && side_b.positive? && side_c.positive?
   end
 
   def area
     s = sides.sum / 2
     heron = s * (s - side_a) * (s - side_b) * (s - side_c)
-    raise Math::DomainError unless heron.positive?
+    raise(TriangleError, ERR_MSG) unless heron.positive?
 
     Math.sqrt(heron)
   end
