@@ -1,13 +1,11 @@
 class Cylinder
-  attr_reader :radius
-  attr_reader :height
+  attr_reader :radius, :height
 
-  def initialize(radius = )
-    @radius = radius(radius)
-  end
+  def initialize(radius, height)
+    @radius = radius.to_f
+    @height = height.to_f
 
-  def height(height = )
-    @height = height(height)
+    raise(ArgumentError, "Radius and height must be positive") unless self.radius.positive? && self.height.positive?
   end
 
   def volume
