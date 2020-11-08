@@ -1,17 +1,9 @@
 class Torus
-  attr_reader :radius
+  attr_reader :radius_a, :radius_b
 
-  def initialize(radius = 1)
-    @radius = check_radius(radius)
-  end
-
-  def radius_a = (radius_a)
-    @radius_a = check_radius(radius_a)
-  end
-
-
-  def radius_b = (radius_b)
-    @radius_b = check_radius(radius_b)
+  def initialize(radius_a, radius_b)
+    @radius_a = radius_a
+    @radius_b = radius_b
   end
 
   def volume
